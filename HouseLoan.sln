@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseLoan.Api", "HouseLoan.Api\HouseLoan.Api.csproj", "{7E73E794-68DA-4C04-B6DF-2D6755F7AD30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseLoan.UI", "HouseLoan.UI\HouseLoan.UI.csproj", "{2F12691B-F024-46AF-B80D-4FF2B6EBF914}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E73E794-68DA-4C04-B6DF-2D6755F7AD30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E73E794-68DA-4C04-B6DF-2D6755F7AD30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E73E794-68DA-4C04-B6DF-2D6755F7AD30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E73E794-68DA-4C04-B6DF-2D6755F7AD30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F12691B-F024-46AF-B80D-4FF2B6EBF914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F12691B-F024-46AF-B80D-4FF2B6EBF914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F12691B-F024-46AF-B80D-4FF2B6EBF914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F12691B-F024-46AF-B80D-4FF2B6EBF914}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF833409-8A3A-4E73-968A-32E16A11580F}
+	EndGlobalSection
+EndGlobal

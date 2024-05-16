@@ -1,0 +1,56 @@
+﻿@model HouseLoan.UI.Models.LoanParameters
+@{
+}
+<h1>Calculate</h1>
+
+<form method="post" class="mt-3">
+
+    <div class="mt-3">
+        <label class="form-label">Selling Price</label>
+        <input type="number" class="form-control" asp-for="SellingPrice">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Processing Fee</label>
+        <input type="number" class="form-control" asp-for="ProcessingFee">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Reservation Fee</label>
+        <input type="number" class="form-control" asp-for="ReservationFee">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Reservation Date</label>
+        <input type="date" class="form-control" asp-for="ReservationDate">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Equity Term</label>
+        <input type="number" class="form-control" asp-for="EquityTerm">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Loan Term</label>
+        <input type="number" class="form-control" asp-for="LoanTerm">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Monthly Amortization</label>
+        <input type="number" class="form-control" asp-for="MonthlyAmortization">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Interest Rate</label>
+        <input type="number" class="form-control" asp-for="InterestRate">
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Insurance</label>
+        <input type="number" class="form-control" asp-for="Insurance">
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </div>
+</form>
