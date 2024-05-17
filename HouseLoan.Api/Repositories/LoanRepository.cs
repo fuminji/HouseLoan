@@ -33,6 +33,12 @@ namespace HouseLoan.Api.Repositories
             };
             return loanResult;
         }
+        public async Task<IEnumerable<Amortization>> GetAllLoansAsync()
+        {
+            return await dbContext.Amortizations
+                .ToListAsync();
+        }
+
 
         public async Task SaveLoanResultAsync(LoanResult loanResult)
         {

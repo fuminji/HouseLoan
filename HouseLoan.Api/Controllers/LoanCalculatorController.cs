@@ -3,6 +3,7 @@ using HouseLoan.Api.Repositories;
 using HouseLoan.Api.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HouseLoan.Api.Controllers
 {
@@ -25,6 +26,13 @@ namespace HouseLoan.Api.Controllers
             var loanResult = loanCalculationService.CalculateLoan(loanParameters);
             await loanRepository.SaveLoanResultAsync(loanResult);
             return Ok(loanResult);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllLoans()
+        {
+            var loans = await loanRepository.GetAllLoansAsync();
+            return  Ok(loans);
         }
 
         [HttpGet("{loanId}")]
