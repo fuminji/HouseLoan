@@ -12,15 +12,21 @@ namespace HouseLoan.Api.Repositories
         {
             this.dbContext = dbContext;
         }
-        public async Task<LoanResult> GetLoanResultAsync(int Id)
+        public async Task<LoanResult> GetLoanResultAsync(int loanId)
         {
-            var loanParameters = await dbContext.LoanParams.FindAsync(Id);
-            var equityInstallments = await dbContext.Equities.Where(i => i.Id == Id).ToListAsync();
-            var amortizationInstallments = await dbContext.Amortizations.Where(x => x.Id == Id).ToListAsync();
+            var loanParameters = await dbContext.LoanParams.FindAsync(loanId);
+            var equityInstallments = await dbContext.Equities.Where(i => i.Id == loanId).ToListAsync();
+            var amortizationInstallments = await dbContext.Amortizations.Where(x => x.Id == loanId).ToListAsync();
+
+            if (loanParameters == null)
+            {
+                return null; 
+            }
+
 
             var loanResult = new LoanResult
             {
-                LoanId = Id,
+                LoanId = loanParameters.Id,
                 LoanParameters = loanParameters,
                 Equities = equityInstallments,
                 Amortizations = amortizationInstallments
@@ -34,20 +40,22 @@ namespace HouseLoan.Api.Repositories
             dbContext.LoanParams.AddAsync(loanParameters);
             await dbContext.SaveChangesAsync();
 
-            var loanId = loanParameters.Id;
+            
 
             foreach (var equityInstallment in loanResult.Equities)
             {
-                equityInstallment.Id = loanId;
+               
                 dbContext.Equities.AddAsync(equityInstallment);
             }
 
             foreach (var amortization in loanResult.Amortizations)
             {
-                amortization.Id = loanId;
+                
                 dbContext.Amortizations.AddAsync(amortization);
             }
             await dbContext.SaveChangesAsync();
         }
+   
+
     }
 }

@@ -30,7 +30,7 @@ namespace HouseLoan.UI.Controllers
         }
 
         [HttpPost] 
-        public async Task<IActionResult> Add(LoanParameters loanParameters)
+        public async Task<IActionResult> Add(LoanParam loanParameters)
         {
             var json = JsonConvert.SerializeObject(loanParameters);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -43,6 +43,13 @@ namespace HouseLoan.UI.Controllers
             return View();
         }
 
-        
+        public async Task<IActionResult> GetLoanResult(int loanId)
+        {
+            var response = await _httpClient.GetAsync($"api/Loan/{loanId}");
+                var content = await response.Content.ReadAsStringAsync();
+                var loanResult = JsonConvert.DeserializeObject<LoanResult>(content);
+                return View(loanResult);
+        }
+
     }
 }

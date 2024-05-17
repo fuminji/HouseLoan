@@ -4,7 +4,7 @@ namespace HouseLoan.Api.Repositories
 {
     public interface ILoanRepository
     {
-        Task<LoanResult> GetLoanResultAsync(int Id);
+        Task<LoanResult> GetLoanResultAsync(int LoanId);
         Task SaveLoanResultAsync(LoanResult loanResult);
     }
 }
