@@ -32,7 +32,7 @@ namespace HouseLoan.Api.Controllers
         public async Task<IActionResult> GetAllLoans()
         {
             var loans = await loanRepository.GetAllLoansAsync();
-            return  Ok(loans);
+            return Ok(loans);
         }
 
         [HttpGet("{loanId}")]
