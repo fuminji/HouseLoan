@@ -48,7 +48,7 @@ namespace HouseLoan.UI.Controllers
             var response = await _httpClient.GetAsync($"api/Loan/{loanId}");
                 var content = await response.Content.ReadAsStringAsync();
                 var loanResult = JsonConvert.DeserializeObject<LoanResult>(content);
-                return View(loanResult);
+            return View(loanResult);
         }
 
     }
