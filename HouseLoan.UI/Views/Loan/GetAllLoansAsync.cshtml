@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HouseLoan.Api.Model.Domain.Amortization>
+@{
+}
+<table>
+    <thead>
+        <tr>
+            <th>Loan ID</th>
+            <th>Loan Amount</th>
+            <th>Interest Rate</th>
+            <th>Amortization Schedules</th>
+        </tr>
+    </thead>
+    <tbody>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Due Date</th>
+                                <th>Insurance</th>
+                                <th>Interest</th>
+                                <th>Principal</th>
+                                <th>Total Amount</th>
+                                <th>Outstanding Balance</th>
+                                <th>Amortization Schedule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var amortization in Model)
+                            {
+                                <tr>
+                                    <td>@amortization.DueDate.ToString("yyyy-MM-dd")</td>
+                                    <td>@amortization.Insurance.ToString("C")</td>
+                                    <td>@amortization.Interest.ToString("C")</td>
+                                    <td>@amortization.Principal.ToString("C")</td>
+                                    <td>@amortization.TotalAmount.ToString("C")</td>
+                                    <td>@amortization.OutstandingBalance.ToString("C")</td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    </tbody>
+</table>

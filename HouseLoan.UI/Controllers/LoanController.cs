@@ -16,7 +16,6 @@ namespace HouseLoan.UI.Controllers
     public class LoanController : Controller
     {
         private readonly HttpClient _httpClient;
-        private readonly LoanDbContext dbContext;
         private readonly ILoanRepository loanRepository;
 
         public LoanController(IHttpClientFactory httpClientFactory, ILoanRepository loanRepository)
@@ -48,6 +47,7 @@ namespace HouseLoan.UI.Controllers
             var loanResult = JsonConvert.DeserializeObject<LoanResult>(content);
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> GetAllLoansAsync()
         {
             var amortizations =  await loanRepository.GetAllLoansAsync();

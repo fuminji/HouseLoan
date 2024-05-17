@@ -16,9 +16,9 @@ builder.Services.AddDbContext<LoanDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("HouseLoanConnectionString")));
 
 builder.Services.AddScoped<ILoanCalculationService, LoanCalculationService>();
+builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 
 // Register the ILoanRepository and its implementation
-builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 
 var app = builder.Build();
 
