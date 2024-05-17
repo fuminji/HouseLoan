@@ -35,11 +35,6 @@ namespace HouseLoan.Api.Controllers
             return Ok(loans);
         }
 
-        [HttpGet("{loanId}")]
-        public async Task<IActionResult> GetLoanResult(int loanId)
-        {
-            var loanResult = await loanRepository.GetLoanResultAsync(loanId);
-            return Ok(loanResult);
-        }
+      
     }
 }

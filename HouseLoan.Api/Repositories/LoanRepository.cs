@@ -7,10 +7,12 @@ namespace HouseLoan.Api.Repositories
     public class LoanRepository : ILoanRepository 
     {
         private readonly LoanDbContext dbContext;
+        
 
         public LoanRepository(LoanDbContext dbContext)
         {
             this.dbContext = dbContext;
+           
         }
         public async Task<LoanResult> GetLoanResultAsync(int loanId)
         {

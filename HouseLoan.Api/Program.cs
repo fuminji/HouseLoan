@@ -11,14 +11,17 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LoanDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("HouseLoanConnectionString")));
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 builder.Services.AddScoped<ILoanCalculationService, LoanCalculationService>();
-builder.Services.AddScoped<ILoanRepository, LoanRepository>();
+builder.Services.AddTransient<ILoanRepository, LoanRepository>();
+builder.Services.AddHttpContextAccessor();
 
-// Register the ILoanRepository and its implementation
+
 
 var app = builder.Build();
 
